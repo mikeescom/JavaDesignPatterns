@@ -1,10 +1,5 @@
 package com.mikeescom.strategypattern;
 
-import com.mikeescom.strategypattern.controller.CreditCardAlgorithm;
-import com.mikeescom.strategypattern.controller.PaypalAlgorithm;
-import com.mikeescom.strategypattern.controller.ShoppingCart;
-import com.mikeescom.strategypattern.model.Product;
-
 public class Main {
     public static void main(String[] args) {
         ShoppingCart cart = new ShoppingCart();

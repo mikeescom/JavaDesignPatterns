@@ -1,0 +1,32 @@
+@startuml
+
+interface Coffee {
+  ~double getCost()
+  ~String getIngredients()
+}
+
+class CoffeeDecorator {
+  -Coffee decoratedCoffee
+  +double getCost()
+  +String getIngredients()
+}
+
+class SimpleCoffee {
+
+}
+
+class WithMilk {
+
+}
+
+class WithSprinkles {
+
+}
+
+Coffee <|-- CoffeeDecorator
+Coffee <|-- CreditCardAlgorithm
+Coffee --> SimpleCoffee
+CoffeeDecorator --> WithMilk
+CoffeeDecorator --> WithSprinkles
+
+@enduml

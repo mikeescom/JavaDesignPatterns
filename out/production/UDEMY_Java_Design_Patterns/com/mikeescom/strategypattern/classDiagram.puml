@@ -1,0 +1,35 @@
+@startuml
+
+interface Payment {
+  ~pay(int amount)
+}
+
+class Product {
+  -String upcCode
+  -int price
+}
+
+class ShoppingCart {
+  ~List productList
+  +void addProduct()
+  +void removeProduct()
+  +int calculateTotal()
+  +void pay()
+}
+
+class PaypalAlgorithm {
+  -String upcCode
+  -int price
+}
+
+class CreditCardAlgorithm {
+  -String name
+  -String cardNumber
+}
+
+Payment <|-- PaypalAlgorithm
+Payment <|-- CreditCardAlgorithm
+ShoppingCart --> Payment
+ShoppingCart --> Product
+
+@enduml
