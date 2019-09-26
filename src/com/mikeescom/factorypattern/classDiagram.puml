@@ -1,0 +1,28 @@
+@startuml
+
+interface Shape {
+  ~draw()
+}
+
+class ShapeFactory {
+  -Shape getShape()
+}
+
+class Rectangle {
+
+}
+
+class Square {
+
+}
+
+class Circle {
+
+}
+
+Shape <|-- Rectangle
+Shape <|-- Square
+Shape <|-- Circle
+ShapeFactory --> Shape
+
+@enduml
