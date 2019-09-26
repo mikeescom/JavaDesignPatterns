@@ -1,0 +1,32 @@
+@startuml
+
+interface Command {
+  execute()
+}
+
+class Light{
+  turnOn()
+  turnOff()
+}
+
+class Switch {
+  Map commandMap
+  register(String, Command)
+  execute(String)
+}
+
+class SwitchOnCommand {
+  execute()
+}
+
+class SwitchOffCommand {
+  execute()
+}
+
+Command <|-- SwitchOnCommand
+Command <|-- SwitchOffCommand
+Switch --> Command
+SwitchOnCommand --> Light
+SwitchOffCommand --> Light
+
+@enduml
