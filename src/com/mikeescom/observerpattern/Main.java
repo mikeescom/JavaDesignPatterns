@@ -1,9 +1,5 @@
 package com.mikeescom.observerpattern;
 
-import com.mikeescom.observerpattern.interfaces.Observer;
-import com.mikeescom.observerpattern.model.EmailTopic;
-import com.mikeescom.observerpattern.model.EmailTopicSubscriber;
-
 public class Main {
     public static void main(String[] args) {
         EmailTopic topic = new EmailTopic();

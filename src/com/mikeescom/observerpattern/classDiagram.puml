@@ -1,0 +1,37 @@
+@startuml
+
+interface Observer {
+  update()
+  setSubject(Subject)
+}
+
+interface Subject {
+  register(Observer)
+  unregister(Observer)
+  notifyObservers()
+  Object getUpdate(Observer)
+}
+
+class EmailTopic {
+  List<Observer> observers
+  String message
+  register(Observer)
+  unregister(Observer)
+  notifyObservers()
+  Object getUpdate(Observer)
+  postMessage(String)
+}
+
+class EmailTopicSubscriber {
+  String name
+  Subject topic
+  update()
+  setSubject(Subject)
+}
+
+EmailTopicSubscriber --|> Observer
+EmailTopic --|> Subject
+EmailTopic --> Observer
+EmailTopicSubscriber --> Subject
+
+@enduml

@@ -1,7 +1,7 @@
-package com.mikeescom.observerpattern.model;
+package com.mikeescom.observerpattern;
 
-import com.mikeescom.observerpattern.interfaces.Observer;
-import com.mikeescom.observerpattern.interfaces.Subject;
+import com.mikeescom.observerpattern.Observer;
+import com.mikeescom.observerpattern.Subject;
 
 import java.util.ArrayList;
 import java.util.List;
