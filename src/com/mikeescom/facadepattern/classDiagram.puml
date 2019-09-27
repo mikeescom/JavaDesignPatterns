@@ -1,0 +1,32 @@
+@startuml
+
+class CPU {
+  freeze()
+  jump(long)
+  execute()
+}
+
+class HardDrive {
+  read(long , int)
+}
+
+class Memory {
+  load(long , byte[])
+}
+
+class ComputerFacade {
+  long BOOT_ADDRESS
+  long BOOT_SECTOR
+  int SECTOR_SIZE
+  CPU processor
+  Memory ram
+  HardDrive hd
+  start()
+}
+
+ComputerFacade --> CPU
+ComputerFacade --> HardDrive
+ComputerFacade --> Memory
+
+
+@enduml
