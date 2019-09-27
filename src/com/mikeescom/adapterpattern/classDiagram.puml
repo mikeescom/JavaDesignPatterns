@@ -1,0 +1,34 @@
+@startuml
+
+interface LightningPhone {
+  recharge()
+  useLightning()
+}
+
+interface MicroUsbPhone {
+  recharge()
+  useMicroUsb()
+}
+
+class Iphone {
+  recharge()
+  useLightning()
+}
+
+class Android {
+  recharge()
+  useMicroUsb()
+}
+
+class LightningToMicroUsbAdapter {
+  recharge()
+  useMicroUsb()
+}
+
+LightningPhone <|-- Iphone
+MicroUsbPhone <|-- Android
+MicroUsbPhone <|-- LightningToMicroUsbAdapter
+LightningToMicroUsbAdapter --> LightningPhone
+
+
+@enduml
