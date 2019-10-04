@@ -1,0 +1,26 @@
+@startuml
+
+class Memento {
+  -state : String
+  +Memento()
+  +getState() : String
+}
+
+class Originator {
+  -state : String
+  +setState() : void
+  +getState() : String
+  +saveStateToMemento() : Memento
+  +getStateToMemento() : void
+}
+
+class CareTaker {
+  -mementoList : List
+  +add() : void
+  +get() : Memento
+}
+
+Originator -right-> Memento
+CareTaker -up-> Memento
+
+@enduml
