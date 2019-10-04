@@ -1,0 +1,27 @@
+@startuml
+
+abstract class Game {
+  +void initialize()
+  +void startPlay()
+  +void endPlay()
+  +void play()
+}
+
+class Cricket {
+  +void initialize()
+  +void startPlay()
+  +void endPlay()
+  +void play()
+}
+
+class Football {
+  +void initialize()
+  +void startPlay()
+  +void endPlay()
+  +void play()
+}
+
+Game <|-- Cricket
+Game <|-- Football
+
+@enduml
