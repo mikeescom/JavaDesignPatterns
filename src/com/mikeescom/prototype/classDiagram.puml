@@ -39,9 +39,9 @@ class ShapeCache {
   +loadCache() : void
 }
 
-Shape -down-|> Circle
-Shape -down-|> Rectangle
-Shape -down-|> Square
+Shape <|-down- Circle
+Shape <|-down- Rectangle
+Shape <|-down- Square
 ShapeCache -left-> Shape
 
 @enduml
