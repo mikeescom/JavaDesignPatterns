@@ -1,0 +1,26 @@
+@startuml
+
+interface State {
+  +doAction() : void
+}
+
+class StartState {
+  +doAction() : void
+}
+
+class StopState {
+  +doAction() : void
+}
+
+class Context {
+  -state : State
+  +Context() : void
+  +getState() : int
+  +setState() : void
+}
+
+State <|-down- StartState
+State <|-down- StopState
+Context -right-> State
+
+@enduml
