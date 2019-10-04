@@ -1,0 +1,26 @@
+@startuml
+
+interface Container {
+  +getIterator() : Iterator
+}
+
+interface Iterator {
+  +hasNext() : boolean
+  +next() : Object
+}
+
+class NameRepository {
+  +name : String[]
+  +getIterator() : Iterator
+}
+
+class NameIterator {
+  +hasNext() : boolean
+  +next() : Object
+}
+
+Container <|- NameRepository
+Iterator <|- NameIterator
+NameRepository --> NameIterator
+
+@enduml
