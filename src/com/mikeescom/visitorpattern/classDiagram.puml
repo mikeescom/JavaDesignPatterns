@@ -1,0 +1,51 @@
+@startuml
+
+interface ComputerPart {
+  +accept() : void
+}
+
+interface ComputerPartVisitor {
+  +visit(Computer)
+  +visit(Mouse)
+  +visit(Keyboard)
+  +visit(Monitor)
+}
+
+class ComputerPartDisplayVisitor {
+  +visit(Computer)
+  +visit(Mouse)
+  +visit(Keyboard)
+  +visit(Monitor)
+}
+
+class Computer {
+  ~parts : ComputerPart[]
+  +Computer()
+  +accept() : void
+}
+
+class Keyboard {
+  +accept() : void
+}
+
+class Mouse {
+  +accept() : void
+}
+
+class Monitor {
+  +accept() : void
+}
+
+class Main {
+  +main() : void
+}
+
+ComputerPart <|-down- Computer
+ComputerPart <|-down- Keyboard
+ComputerPart <|-down- Mouse
+ComputerPart <|-down- Monitor
+ComputerPartVisitor <|-right- ComputerPartDisplayVisitor
+Main -left-> ComputerPartDisplayVisitor
+Main -down-> ComputerPart
+
+@enduml
