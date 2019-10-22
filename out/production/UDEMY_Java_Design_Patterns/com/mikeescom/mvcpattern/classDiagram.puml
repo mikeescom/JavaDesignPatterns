@@ -1,0 +1,30 @@
+@startuml
+
+class StudentView {
+  +printStudentDetails() : void
+}
+
+class StudentController {
+  -model : Student
+  -view : StudentView
+  +StudentController()
+  +setStudentName() : void
+  +getStudentName() : String
+  +setStudentRollNo() : void
+  +getStudentRollNo() : String
+  +updateView() : void
+}
+
+class Student {
+  +rollNo : String
+  +name : String
+  +setName() : void
+  +getName() : String
+  +setRollNo() : void
+  +getRollNo() : String
+}
+
+StudentView -right-> StudentController
+StudentController -down->  Student
+
+@enduml

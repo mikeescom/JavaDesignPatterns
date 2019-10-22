@@ -1,0 +1,25 @@
+@startuml
+
+interface Image {
+  +display() : void
+}
+
+class RealImage {
+  +fileName : String
+  +RealImage()
+  +display() : void
+  +loadFromDisk() : void
+}
+
+class ProxyImage {
+  +realImage : RealImage
+  +fileName : String
+  +ProxyImage()
+  +display() : void
+}
+
+Image <|-down- RealImage
+Image <|-down- ProxyImage
+RealImage <-left- ProxyImage
+
+@enduml

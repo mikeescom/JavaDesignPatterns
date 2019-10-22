@@ -1,0 +1,39 @@
+@startuml
+
+interface Chain {
+  setNext() : void
+  process() : void
+}
+
+class Number {
+  -number : int
+  +Number()
+  +getNumber() : int
+}
+
+class NegativeProcessor {
+  -nextInChain : Chain
+  setNext() : void
+  process() : void
+}
+
+class ZeroProcessor {
+  -nextInChain : Chain
+  setNext() : void
+  process() : void
+}
+
+class PositiveProcessor {
+  -nextInChain : Chain
+  setNext() : void
+  process() : void
+}
+
+NegativeProcessor -up-|> Chain
+ZeroProcessor -up-|> Chain
+PositiveProcessor -up-|> Chain
+NegativeProcessor -down-> Number
+ZeroProcessor -down-> Number
+PositiveProcessor -down-> Number
+
+@enduml

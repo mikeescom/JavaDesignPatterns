@@ -1,0 +1,47 @@
+@startuml
+
+abstract class Shape {
+  -id : String
+  #type : String
+  +getType() : String
+  +getId() : String
+  +setId() : void
+  +clone() : Object
+}
+
+class Circle {
+  -type : String
+  +getType() : String
+  +getId() : String
+  +setId() : void
+  +clone() : Object
+}
+
+class Rectangle {
+  -type : String
+  +getType() : String
+  +getId() : String
+  +setId() : void
+  +clone() : Object
+}
+
+class Square {
+  -type : String
+  +getType() : String
+  +getId() : String
+  +setId() : void
+  +clone() : Object
+}
+
+class ShapeCache {
+  -shapeMap : Hashtable
+  +getShape() : Shape
+  +loadCache() : void
+}
+
+Shape <|-down- Circle
+Shape <|-down- Rectangle
+Shape <|-down- Square
+ShapeCache -left-> Shape
+
+@enduml

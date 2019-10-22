@@ -1,0 +1,36 @@
+@startuml
+
+interface IChatRoom {
+  +sendMessage() : String
+  +addUser() : String
+}
+
+abstract class User {
+  -mediator : IChatRoom
+  -id : String
+  -name : String
+  +User()
+  {abstract} send()
+  {abstract} receive()
+  +getMediator() : IChatRoom
+  +getId() : String
+  +getName() : String
+}
+
+class ChatRoom {
+  -usersMap : HashMap
+  +sendMessage() : void
+  +addUser() : void
+}
+
+class ChatUser {
+  +ChatUser()
+  +send() : void
+  +receive() : void
+}
+
+IChatRoom <|-down- ChatRoom
+User <|-down- ChatUser
+IChatRoom <-left- User
+
+@enduml
