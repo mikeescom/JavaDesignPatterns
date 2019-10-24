@@ -1,0 +1,48 @@
+@startuml
+
+interface Shape {
+  #draw()
+}
+
+class FactoryProducer {
+  +AbstractFactory getFactory()
+}
+
+abstract class AbstractFactory {
+  -Shape getShape()
+}
+
+class ShapeFactory {
+  -Shape getShape()
+}
+
+class RoundedShapeFactory {
+  -Shape getShape()
+}
+
+class Rectangle {
+  -draw()
+}
+
+class Square {
+  -draw()
+}
+
+class RoundedRectangle {
+  -draw()
+}
+class RoundedSquare {
+  -draw()
+}
+
+FactoryProducer -left-> AbstractFactory
+ShapeFactory -up-|> AbstractFactory
+RoundedShapeFactory -up-|> AbstractFactory
+ShapeFactory -down-> Shape
+RoundedShapeFactory -down-> Shape
+Shape <|-down- Rectangle
+Shape <|-down- Square
+Shape <|-down- RoundedRectangle
+Shape <|-down- RoundedSquare
+
+@enduml
